@@ -21,7 +21,7 @@ var app = express(); // Ajout de helmet pour protéger l'application de certaine
 
 app.use(helmet()); // Connection de notre application à notre BDD mongoose
 
-mongoose.connect('mongodb+srv://DB_user:2XfPuj8dAMA3GZhV@cluster0.vxrnf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+mongoose.connect(process.env.DB_connectionString, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(function () {

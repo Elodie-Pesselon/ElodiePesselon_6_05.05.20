@@ -1,3 +1,4 @@
+require('dotenv').config();
 const http = require('http'); // Importation du package HTTP natif de Node
 const app = require('./app'); // Importation de l'application
 

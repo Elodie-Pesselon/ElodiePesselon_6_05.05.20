@@ -1,5 +1,7 @@
 "use strict";
 
+require('dotenv').config();
+
 var http = require('http'); // Importation du package HTTP natif de Node
 
 
