@@ -17,7 +17,7 @@ var userRoutes = require('./routes/user'); //Appel de la méthode Express :
 
 var app = express(); // Connection de notre application à notre BDD mongoose
 
-mongoose.connect('mongodb+srv://Elodie_Pesselon:LoveWebDev1206@cluster0.vxrnf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://DB_user:2XfPuj8dAMA3GZhV@cluster0.vxrnf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(function () {

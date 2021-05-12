@@ -2,6 +2,8 @@
 
 var multer = require('multer');
 
+var crypto = require('crypto');
+
 var MIME_TYPES = {
   'image/jpg': 'jpg',
   'image/jpeg': 'jpg',
@@ -12,7 +14,9 @@ var storage = multer.diskStorage({
     callback(null, 'images');
   },
   filename: function filename(req, file, callback) {
-    var name = file.originalname.split(' ').join('_');
+    //const name = file.originalname.split(' ').join('_');
+    var name = crypto.randomBytes(16).toString("hex") + '_'; // bytes = 8 booléeens aléatoires 
+
     var extension = MIME_TYPES[file.mimetype];
     callback(null, name + Date.now() + '.' + extension);
   }
