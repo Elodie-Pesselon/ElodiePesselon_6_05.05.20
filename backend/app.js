@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser'); 
 const mongoose = require('mongoose');
 const path = require('path');
+const helmet = require ('helmet');
 
 // Importation des routes
 const sauceRoutes = require('./routes/sauce');
@@ -11,6 +12,8 @@ const userRoutes = require('./routes/user');
 //Appel de la méthode Express :
 const app = express();
 
+// Ajout de helmet pour protéger l'application de certaines vulnérabilités
+app.use(helmet());
 
 // Connection de notre application à notre BDD mongoose
 mongoose.connect('mongodb+srv://DB_user:2XfPuj8dAMA3GZhV@cluster0.vxrnf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {

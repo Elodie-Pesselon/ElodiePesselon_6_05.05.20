@@ -7,7 +7,9 @@ var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
 
-var path = require('path'); // Importation des routes
+var path = require('path');
+
+var helmet = require('helmet'); // Importation des routes
 
 
 var sauceRoutes = require('./routes/sauce');
@@ -15,7 +17,9 @@ var sauceRoutes = require('./routes/sauce');
 var userRoutes = require('./routes/user'); //Appel de la méthode Express :
 
 
-var app = express(); // Connection de notre application à notre BDD mongoose
+var app = express(); // Ajout de helmet pour protéger l'application de certaines vulnérabilités
+
+app.use(helmet()); // Connection de notre application à notre BDD mongoose
 
 mongoose.connect('mongodb+srv://DB_user:2XfPuj8dAMA3GZhV@cluster0.vxrnf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
   useNewUrlParser: true,
