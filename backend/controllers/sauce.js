@@ -95,7 +95,7 @@ exports.likeOrNot = (req, res, next) => {
                 _id: req.params.id
             }, {
                 $inc: {
-                    likes: req.body.like++ //Ajouter 1 au nombre de likes
+                    likes: 1 //Ajouter 1 au nombre de likes
                 },
                 $push: {
                     usersLiked: req.body.userId // Ajout de l'userId au tableau des usersLiked
@@ -112,7 +112,7 @@ exports.likeOrNot = (req, res, next) => {
                 _id: req.params.id
             }, {
                 $inc: {
-                    dislikes: (req.body.like++) * -1 // Ajouter 1 au nombre de dislikes
+                    dislikes: 1 // Ajouter 1 au nombre de dislikes
                 },
                 $push: {
                     usersDisliked: req.body.userId // Ajout de l'userId au tableau des usersDisliked

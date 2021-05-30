@@ -1,6 +1,5 @@
-// Importations (Express, Body-parser, Mongoose,etc.)
+// Importations (Express, Mongoose,etc.)
 const express = require('express'); 
-const bodyParser = require('body-parser'); 
 const mongoose = require('mongoose');
 const path = require('path');
 const helmet = require ('helmet');
@@ -36,7 +35,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 
-// Ajout d'un gestionnaire de routage pour gérer la ressource image
+// Ajout d'un gestionnaire pour exposer au public le dossier image 
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
 
